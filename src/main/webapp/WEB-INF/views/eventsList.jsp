@@ -21,6 +21,7 @@
     }
 </style>
 <body>
+<a href="<c:url value="/events/add"/>">Add new Event</a>
 <a href="<c:url value="/players/list"/>">Players</a>
 <a href="<c:url value="/users/list"/>">Users</a>
 <%--<a href="<c:url value="/article/list"/>">article list</a>--%>
@@ -38,7 +39,7 @@
     <c:forEach items="${events}" var="event">
         <tr>
             <td>${event.id}</td>
-            <td>${event.type}</td>
+            <td>${event.eventType.name}</td>
             <td>${event.name}</td>
             <td>${event.description}</td>
 

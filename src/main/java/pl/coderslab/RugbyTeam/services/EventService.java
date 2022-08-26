@@ -14,4 +14,8 @@ public class EventService {
     public Iterable<Event> getEventsList() {
         return eventRepository.findAll();
     }
+
+    public void save(Event event){
+        eventRepository.save(event);
+    }
 }
