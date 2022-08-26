@@ -23,6 +23,7 @@
     <form:checkbox path="readyToPlay"/>
 
 
+
        <input type="submit" value="submit">
 
 </form:form>

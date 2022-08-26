@@ -22,7 +22,7 @@ public class PlayerController {
     public String getPlayersList(Model model){
         List<Player> all = (List<Player>) playerService.getPlayersList();
         model.addAttribute("players",all);
-        return "playersList";
+        return "listPlayers";
     }
     @GetMapping("add")
     public String add(Model model) {

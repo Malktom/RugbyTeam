@@ -44,7 +44,7 @@
             <td>${event.description}</td>
 
             <td>
-<%--                <a href="<c:url value="/category/delete/${category.id}"/>">delete</a>--%>
+                <a href="<c:url value="/event/delete/${event.id}"/>">delete</a>
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
             </td>
         </tr>

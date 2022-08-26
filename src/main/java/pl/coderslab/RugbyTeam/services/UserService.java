@@ -15,5 +15,6 @@ public class UserService {
 
     public Iterable<User> getUserList() {
         return userRepository.findAll();
+
     }
 }
