@@ -20,8 +20,8 @@
     }
 </style>
 <body>
-<a href="<c:url value="/team/usersList"/>">Users</a>
-<a href="<c:url value="/team/eventsList"/>">Events</a>
+<a href="<c:url value="/users/list"/>">Users</a>
+<a href="<c:url value="/events/list"/>">Events</a>
 <%--<a href="<c:url value="/article/list"/>">article list</a>--%>
 <%--<a href="<c:url value="/author/list"/>">author list</a>--%>
 <table>

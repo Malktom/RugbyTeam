@@ -1,4 +1,4 @@
-package pl.coderslab.RugbyTeam.repository;
+package pl.coderslab.RugbyTeam.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import pl.coderslab.RugbyTeam.model.User;
