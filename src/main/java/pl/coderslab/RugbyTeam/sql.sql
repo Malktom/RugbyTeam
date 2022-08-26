@@ -1,6 +1,6 @@
 Insert INTO users (id, email, login, password, role)
 VALUES  (1,'tomek@o2.pl','tomek','password',1),
-        (2,'adam@o2.pl','adam','password',1),
+        (2,'adam@o2.pl','adam','password',2),
         (3,'karol@o2.pl','karol','password',1),
         (4,'ania@o2.pl','ania','password',1);
 

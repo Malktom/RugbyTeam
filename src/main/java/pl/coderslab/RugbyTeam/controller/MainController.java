@@ -2,6 +2,7 @@ package pl.coderslab.RugbyTeam.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ import pl.coderslab.RugbyTeam.model.User;
 import pl.coderslab.RugbyTeam.repository.EventRepository;
 import pl.coderslab.RugbyTeam.repository.PlayerRepository;
 import pl.coderslab.RugbyTeam.repository.UserRepository;
+
+import java.util.List;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/team") // This means URL's start with /demo (after Application path)
@@ -52,5 +55,27 @@ public class MainController {
     public @ResponseBody Iterable<Event> getAllEvents() {
         // This returns a JSON or XML with the users
         return eventRepository.findAll();
+    }
+
+    @GetMapping(path="/usersList")
+    public String getUsersList(Model model){
+        // This returns a JSON or XML with the users
+        List<User> all = (List<User>) userRepository.findAll();
+        model.addAttribute("users",all);
+        return "usersList";
+    }
+    @GetMapping(path="/playersList")
+    public String getPlayersList(Model model){
+        // This returns a JSON or XML with the users
+        List<Player> all = (List<Player>) playerRepository.findAll();
+        model.addAttribute("players",all);
+        return "playersList";
+    }
+    @GetMapping(path="/eventsList")
+    public String getEventsList(Model model){
+        // This returns a JSON or XML with the users
+        List<Event> all = (List<Event>) eventRepository.findAll();
+        model.addAttribute("events",all);
+        return "eventsList";
     }
 }

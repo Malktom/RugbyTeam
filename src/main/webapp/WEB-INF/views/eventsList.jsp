@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <title>Title</title>
@@ -20,39 +21,31 @@
     }
 </style>
 <body>
+<a href="<c:url value="/team/playersList"/>">Players</a>
 <a href="<c:url value="/team/usersList"/>">Users</a>
-<a href="<c:url value="/team/eventsList"/>">Events</a>
 <%--<a href="<c:url value="/article/list"/>">article list</a>--%>
 <%--<a href="<c:url value="/author/list"/>">author list</a>--%>
 <table>
     <tr>
         <th>id</th>
+        <th>type</th>
         <th>name</th>
-        <th>surname</th>
-        <th>weight</th>
-        <th>height</th>
-        <th>position</th>
-        <th>readyToPlay</th>
-        <th>medicalCheckDate</th>
-        <th>presenceStatistic</th>
+        <th>description</th>
+        <th>coach</th>
+
 
     </tr>
-    <c:forEach items="${players}" var="player">
+    <c:forEach items="${events}" var="event">
         <tr>
-            <td>${player.id}</td>
-            <td>${player.name}</td>
-            <td>${player.surname}</td>
-            <td>${player.weight}</td>
-            <td>${player.height}</td>
-            <td>${player.position}</td>
-            <td>${player.readyToPlay}</td>
-            <td>${player.medicalCheckDate}</td>
-            <td>${player.presenceStatistic}</td>
+            <td>${event.id}</td>
+            <td>${event.type}</td>
+            <td>${event.name}</td>
+            <td>${event.description}</td>
 
-<%--            <td>--%>
+            <td>
 <%--                <a href="<c:url value="/category/delete/${category.id}"/>">delete</a>--%>
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
-<%--            </td>--%>
+            </td>
         </tr>
 
     </c:forEach>

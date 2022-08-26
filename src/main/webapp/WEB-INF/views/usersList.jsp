@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <title>Title</title>
@@ -20,7 +21,8 @@
     }
 </style>
 <body>
-<%--<a href="<c:url value="/category/add"/>">add category</a>--%>
+<a href="<c:url value="/team/playersList"/>">Players</a>
+<a href="<c:url value="/team/eventsList"/>">Events</a>
 <%--<a href="<c:url value="/article/list"/>">article list</a>--%>
 <%--<a href="<c:url value="/author/list"/>">author list</a>--%>
 <table>
@@ -32,19 +34,20 @@
 
 
     </tr>
-<%--    <c:forEach items="${categories}" var="category">--%>
-<%--        <tr>--%>
-<%--            <td>${category.id}</td>--%>
-<%--            <td>${category.name}</td>--%>
-<%--            <td>${category.description}</td>--%>
+    <c:forEach items="${users}" var="user">
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.login}</td>
+            <td>${user.email}</td>
+            <td>${user.role}</td>
 
-<%--            <td>--%>
+            <td>
 <%--                <a href="<c:url value="/category/delete/${category.id}"/>">delete</a>--%>
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
+            </td>
+        </tr>
 
-<%--    </c:forEach>--%>
+    </c:forEach>
 
 </table>
 </body>
