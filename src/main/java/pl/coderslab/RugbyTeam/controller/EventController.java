@@ -10,6 +10,7 @@ import pl.coderslab.RugbyTeam.model.EventType;
 import pl.coderslab.RugbyTeam.services.EventService;
 import pl.coderslab.RugbyTeam.services.EventTypeService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -36,8 +37,11 @@ public class EventController {
         return "addEvent";
     }
     @PostMapping("/add")
-    public String save(Event event) {
+    public String save(@Valid Event event, BindingResult result) {
 
+        if (result.hasErrors()) {
+            return "addEvent";
+        }
         eventService.save(event);
         return "redirect:/app/events/list";
     }

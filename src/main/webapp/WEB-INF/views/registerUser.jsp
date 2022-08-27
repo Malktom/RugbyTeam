@@ -13,12 +13,16 @@
     <form:hidden path="id"/>
     Login:
     <form:input path="login"/>
+    <form:errors path="login" cssClass="error-class"/>
     Email:
     <form:input path="email"/>
+    <form:errors path="email" cssClass="error-class"/>
     Password:
     <form:input path="password"/>
+    <form:errors path="password" cssClass="error-class"/>
     Role:
     <form:input path="role"/>
+    <form:errors path="role" cssClass="error-class"/>
 
 
 
