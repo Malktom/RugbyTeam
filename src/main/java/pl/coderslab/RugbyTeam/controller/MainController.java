@@ -33,6 +33,10 @@ public class MainController {
     public String homePage(){
         return "landingPage";
     }
+//    @GetMapping("/login")
+//    public String login(){
+//        return "login";
+//    }
 //
 //    @PostMapping(path="/add") // Map ONLY POST Requests
 //    public @ResponseBody String addNewUser (@RequestParam String name
