@@ -27,37 +27,4 @@ public class UserController {
         return "listUsers";
     }
 
-    @GetMapping("register")
-    public String add(Model model) {
-        model.addAttribute("user", new User());
-        return "registerUser";
-    }
-
-    @GetMapping("/login")
-    public String login(Model model, HttpServletRequest request) {
-        model.addAttribute("user", new User());
-        HttpSession session = request.getSession();
-        return "login";
-    }
-
-    @PostMapping("/login")
-    @ResponseBody
-    public String login(@RequestParam("login") String login,
-                        @RequestParam("password") String password,
-                        HttpSession session) {
-        User user = userService.findByLogin(login);
-
-        if (login.equals(user.getLogin()) && password.equals(user.getPassword())) {
-
-            session.setAttribute("user", user);
-        }
-
-        if (session.getAttribute("user") != null) {
-
-            return "redirect:/app/";
-        } else {
-            return "redirect:/app/users/login";
-        }
-
-    }
 }

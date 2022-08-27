@@ -7,6 +7,7 @@
     <title>Title</title>
 </head>
 <body>
+<a href="<c:url value="/register"/>">Register New User</a>
 <form:form method="post" modelAttribute="user" >
 
     Login:
