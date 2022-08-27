@@ -8,6 +8,7 @@
 </head>
 <jsp:include page="formStyle.jsp"/>
 <body>
+<jsp:include page="navi.jsp"/>
 <form:form method="post" modelAttribute="event">
     <form:hidden path="id"/>
     EvenType:

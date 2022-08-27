@@ -147,5 +147,13 @@ th {
     background-color: #04AA6D;
     color: white;
 }
+.btn-group button {
+    background-color: gray; /* Green background */
+    border: 3px black; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
 </style>
 

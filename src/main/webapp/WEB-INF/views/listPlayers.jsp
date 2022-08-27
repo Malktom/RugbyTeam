@@ -8,9 +8,9 @@
 <body>
 
 <jsp:include page="navi.jsp"/>
-<a href="<c:url value="/app/players/add"/>">Add new Player</a>
-<%--<a href="<c:url value="/article/list"/>">article list</a>--%>
-<%--<a href="<c:url value="/author/list"/>">author list</a>--%>
+<div class="btn-group">
+    <button onclick="location.href='/app/players/add'" type="button">Add New Player</button>
+</div>
 <table>
     <tr>
         <th>id</th>
@@ -37,7 +37,10 @@
             <td>${player.presenceStatistic}</td>
 
             <td>
-                <a href="<c:url value="/app/players/delete/${player.id}"/>">delete</a>
+                <div class="btn-group">
+                    <button onclick="location.href='/app/players/delete/${player.id}" type="button">delete</button>
+                </div>
+
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
             </td>
         </tr>

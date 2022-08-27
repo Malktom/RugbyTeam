@@ -9,7 +9,11 @@
 <body>
 
 <jsp:include page="navi.jsp"/>
-<a href="<c:url value="/app/events/add"/>">Add new Event</a>
+<div class="btn-group">
+    <button onclick="location.href='/app/events/add'" type="button">Add New Event</button>
+</div>
+
+<div>
 <table>
     <tr>
         <th>id</th>
@@ -29,7 +33,10 @@
             <td>${event.players}</td>
 
             <td>
-                <a href="<c:url value="/app/events/delete/${event.id}"/>">delete</a>
+
+                <div class="btn-group">
+                    <button onclick="location.href='/app/events/delete/${event.id}" type="button">delete</button>
+                </div>
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
             </td>
         </tr>
@@ -37,5 +44,6 @@
     </c:forEach>
 
 </table>
+</div>
 </body>
 </html>
