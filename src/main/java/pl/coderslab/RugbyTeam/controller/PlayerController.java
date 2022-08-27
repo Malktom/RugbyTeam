@@ -12,7 +12,7 @@ import pl.coderslab.RugbyTeam.services.PlayerService;
 import java.util.List;
 
 @Controller
-@RequestMapping(path="/players")
+@RequestMapping(path="/app/players")
 public class PlayerController {
 
     @Autowired
@@ -34,16 +34,16 @@ public class PlayerController {
     public String save(Player player) {
 
         playerService.save(player);
-        return "redirect:/players/list";
+        return "redirect:/app/players/list";
     }
 
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         playerService.delete(id);
-        return "redirect:/players/list";
+        return "redirect:/app/players/list";
     }
     @ModelAttribute("positions")
     public List<String> positions(){
-        return List.of("Prop","Hooker","Second Row"," Flanker","Number 8","Scrum-Half", "Fly-Half", "Winger","Center", "Full Back");
+        return List.of("Prop","Hooker","Second Row"," Flanker","Number 8","Scrum-Half", "Fly-Half", "Winger","Center", "Full Back"); //TODO enum
     }
 }

@@ -9,11 +9,16 @@
 <body>
 <form:form method="post" modelAttribute="user" >
 
+    <form:hidden path="id"/>
     Login:
-    <form:input path="login"/><br>
-
+    <form:input path="login"/>
+    Email:
+    <form:input path="email"/>
     Password:
     <form:input path="password"/>
+    Role:
+    <form:input path="role"/>
+
 
 
     <input type="submit" value="submit">

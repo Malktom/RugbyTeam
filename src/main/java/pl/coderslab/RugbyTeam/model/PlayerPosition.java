@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @Table(name="playerPosition")
 public class PlayerPosition {
     @Id

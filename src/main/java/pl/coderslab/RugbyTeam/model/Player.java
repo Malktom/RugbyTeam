@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Table(name= "players")
-@NoArgsConstructor
 public class Player {
 
     @Id

@@ -3,10 +3,7 @@ package pl.coderslab.RugbyTeam.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.RugbyTeam.model.User;
 import pl.coderslab.RugbyTeam.services.EventService;
 import pl.coderslab.RugbyTeam.services.UserService;
@@ -16,45 +13,51 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping(path="/users")
+@RequestMapping(path = "/app/users")
+@SessionAttributes("user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping(path="/list")
-    public String getUsersList(Model model){
+    @GetMapping(path = "/list")
+    public String getUsersList(Model model) {
         List<User> all = (List<User>) userService.getUserList();
-        model.addAttribute("users",all);
+        model.addAttribute("users", all);
         return "listUsers";
     }
 
     @GetMapping("register")
-    public String add(Model model){
+    public String add(Model model) {
         model.addAttribute("user", new User());
         return "registerUser";
     }
 
     @GetMapping("/login")
-    public String login(HttpServletRequest request) {
+    public String login(Model model, HttpServletRequest request) {
+        model.addAttribute("user", new User());
         HttpSession session = request.getSession();
         return "login";
     }
+
     @PostMapping("/login")
+    @ResponseBody
     public String login(@RequestParam("login") String login,
                         @RequestParam("password") String password,
                         HttpSession session) {
-        List<User> userList = (List<User>) userService.getUserList();
+        User user = userService.findByLogin(login);
 
-        for (User user : userList) {
-            if (login.equals(user.getLogin()) && password.equals(user.getPassword())) {
-                session.setAttribute("user", user);
-            }
+        if (login.equals(user.getLogin()) && password.equals(user.getPassword())) {
+
+            session.setAttribute("user", user);
         }
+
         if (session.getAttribute("user") != null) {
-            return "redirect:/";
+
+            return "redirect:/app/";
         } else {
-            return "redirect:/users/login";
+            return "redirect:/app/users/login";
         }
+
     }
 }

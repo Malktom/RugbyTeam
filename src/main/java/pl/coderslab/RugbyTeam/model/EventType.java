@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @Table(name="eventType")
 
 public class EventType {

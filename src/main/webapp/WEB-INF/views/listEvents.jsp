@@ -21,9 +21,9 @@
     }
 </style>
 <body>
-<a href="<c:url value="/events/add"/>">Add new Event</a>
-<a href="<c:url value="/players/list"/>">Players</a>
-<a href="<c:url value="/users/list"/>">Users</a>
+<a href="<c:url value="/app/events/add"/>">Add new Event</a>
+<a href="<c:url value="/app/players/list"/>">Players</a>
+<a href="<c:url value="/app/users/list"/>">Users</a>
 <%--<a href="<c:url value="/article/list"/>">article list</a>--%>
 <%--<a href="<c:url value="/author/list"/>">author list</a>--%>
 <table>
@@ -44,7 +44,7 @@
             <td>${event.description}</td>
 
             <td>
-                <a href="<c:url value="/event/delete/${event.id}"/>">delete</a>
+                <a href="<c:url value="/app/events/delete/${event.id}"/>">delete</a>
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
             </td>
         </tr>

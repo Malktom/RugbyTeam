@@ -13,7 +13,7 @@ import pl.coderslab.RugbyTeam.services.EventTypeService;
 import java.util.List;
 
 @Controller
-@RequestMapping(path="/events")
+@RequestMapping(path="/app/events")
 public class EventController {
 
     @Autowired
@@ -39,12 +39,12 @@ public class EventController {
     public String save(Event event) {
 
         eventService.save(event);
-        return "redirect:/events/list";
+        return "redirect:/app/events/list";
     }
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         eventService.delete(id);
-        return "redirect:/players/list";
+        return "redirect:/app/players/list";
     }
     @ModelAttribute("eventTypes")
     public List<EventType> eventTypes(){

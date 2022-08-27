@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name= "events")
-@NoArgsConstructor
 public class Event {
 
     @Id

@@ -11,8 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name= "users")
-@NoArgsConstructor
-@AllArgsConstructor// is this required by JPA?
+
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
