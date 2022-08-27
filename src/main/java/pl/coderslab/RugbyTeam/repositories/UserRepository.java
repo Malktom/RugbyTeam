@@ -1,7 +1,7 @@
-package pl.coderslab.RugbyTeam;
+package pl.coderslab.RugbyTeam.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-
+import pl.coderslab.RugbyTeam.model.User;
 
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
