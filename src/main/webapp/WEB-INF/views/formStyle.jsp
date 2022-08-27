@@ -62,7 +62,7 @@ input[type=submit] {
 }
 .bg-img {
     /* The image used */
-    background-image: url("img_nature.jpg");
+
 
     min-height: 380px;
 

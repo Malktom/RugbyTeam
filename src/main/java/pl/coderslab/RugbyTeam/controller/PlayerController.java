@@ -12,6 +12,7 @@ import pl.coderslab.RugbyTeam.services.PlayerService;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(path="/app/players")
@@ -45,6 +46,17 @@ public class PlayerController {
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         playerService.delete(id);
+        return "redirect:/app/players/list";
+    }
+    @RequestMapping("edit/{id}")
+    public String edit(@PathVariable Integer id, Model model) {
+        Optional<Player> byId = playerService.edit(id);
+        model.addAttribute("player",byId);
+        return "addPlayer";
+    }
+    @PostMapping("/edit/{id}")
+    public String edit(Player player) {
+        playerService.save(player);
         return "redirect:/app/players/list";
     }
     @ModelAttribute("positions")

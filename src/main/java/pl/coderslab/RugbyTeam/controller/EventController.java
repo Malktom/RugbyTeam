@@ -14,6 +14,7 @@ import pl.coderslab.RugbyTeam.services.PlayerService;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(path="/app/events")
@@ -52,7 +53,28 @@ public class EventController {
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         eventService.delete(id);
-        return "redirect:/app/players/list";
+        return "redirect:/app/events/list";
+    }
+    @RequestMapping("edit/{id}")
+    public String edit(@PathVariable Integer id, Model model) {
+        Optional<Event> byId = eventService.edit(id);
+        model.addAttribute("event",byId);
+        return "addEvent";
+    }
+    @PostMapping("/edit/{id}")
+    public String edit(Event event) {
+        eventService.save(event);
+        return "redirect:/app/events/list";
+    }
+    @GetMapping("/{eventType}")
+    public String showEventsByType(@PathVariable String eventType, Model model) {
+        model.addAttribute("eventByTypeName", eventService.findAllByEventTypeName(eventType));
+        return "eventsByTypeName";
+    }
+    @GetMapping("/types")
+    public String get5LatestArticles(Model model) {
+        model.addAttribute("eventTypes", eventTypeService.findAll());
+        return "eventType";
     }
     @ModelAttribute("eventTypes")
     public List<EventType> eventTypes(){
@@ -62,4 +84,5 @@ public class EventController {
     public List<Player> players(){
         return (List<Player>) playerService.getPlayersList();
     }
+
 }
