@@ -38,7 +38,8 @@
 
             <td>
                 <div class="btn-group">
-                    <button onclick="location.href='/app/players/delete/${player.id}" type="button">delete</button>
+                    <button onclick="location.href='/app/players/delete/${player.id}'" type="button">delete</button>
+                    <button onclick="location.href='/app/players/edit/${player.id}'" type="button">edit</button>
                 </div>
 
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
