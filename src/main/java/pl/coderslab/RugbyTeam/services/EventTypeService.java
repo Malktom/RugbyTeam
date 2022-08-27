@@ -2,10 +2,9 @@ package pl.coderslab.RugbyTeam.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.coderslab.RugbyTeam.model.Event;
 
 import pl.coderslab.RugbyTeam.model.EventType;
-import pl.coderslab.RugbyTeam.repositories.EventTypeRepository;
+import pl.coderslab.RugbyTeam.repository.EventTypeRepository;
 
 @Service
 public class EventTypeService {

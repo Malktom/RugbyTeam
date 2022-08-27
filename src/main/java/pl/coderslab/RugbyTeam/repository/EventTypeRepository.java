@@ -1,12 +1,13 @@
-package pl.coderslab.RugbyTeam.repositories;
+package pl.coderslab.RugbyTeam.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import pl.coderslab.RugbyTeam.model.User;
+import pl.coderslab.RugbyTeam.model.EventType;
 
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
-public interface UserRepository extends CrudRepository<User, Integer> {
+public interface EventTypeRepository extends CrudRepository<EventType, Integer> {
+
 
 }

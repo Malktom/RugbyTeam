@@ -21,9 +21,9 @@
     }
 </style>
 <body>
-<a href="<c:url value="/players/list"/>">Players</a>
-<a href="<c:url value="/users/list"/>">Users</a>
-<a href="<c:url value="/events/list"/>">Events</a>
+<a href="<c:url value="/app/players/list"/>">Players</a>
+<a href="<c:url value="/app/users/list"/>">Users</a>
+<a href="<c:url value="/app/events/list"/>">Events</a>
 
 
 </table>

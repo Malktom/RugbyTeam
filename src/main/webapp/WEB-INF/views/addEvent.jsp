@@ -6,16 +6,19 @@
 <head>
     <title>Title</title>
 </head>
+<jsp:include page="formStyle.jsp"/>
 <body>
 <form:form method="post" modelAttribute="event">
     <form:hidden path="id"/>
     EvenType:
     <form:select itemValue="id" itemLabel="name" path="eventType" items="${eventTypes}"/>
-
+    <form:errors path="eventType" cssClass="error-class"/>
     Name:
     <form:input path="name"/>
+    <form:errors path="name" cssClass="error-class"/>
    Description:
     <form:input path="description"/>
+    <form:errors path="description" cssClass="error-class"/>
 
 
 

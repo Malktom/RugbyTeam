@@ -10,10 +10,11 @@ import pl.coderslab.RugbyTeam.model.EventType;
 import pl.coderslab.RugbyTeam.services.EventService;
 import pl.coderslab.RugbyTeam.services.EventTypeService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping(path="/events")
+@RequestMapping(path="/app/events")
 public class EventController {
 
     @Autowired
@@ -36,15 +37,18 @@ public class EventController {
         return "addEvent";
     }
     @PostMapping("/add")
-    public String save(Event event) {
+    public String save(@Valid Event event, BindingResult result) {
 
+        if (result.hasErrors()) {
+            return "addEvent";
+        }
         eventService.save(event);
-        return "redirect:/events/list";
+        return "redirect:/app/events/list";
     }
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         eventService.delete(id);
-        return "redirect:/players/list";
+        return "redirect:/app/players/list";
     }
     @ModelAttribute("eventTypes")
     public List<EventType> eventTypes(){
