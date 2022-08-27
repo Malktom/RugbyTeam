@@ -3,12 +3,14 @@ package pl.coderslab.RugbyTeam.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.RugbyTeam.model.Event;
 import pl.coderslab.RugbyTeam.model.Player;
 import pl.coderslab.RugbyTeam.services.EventService;
 import pl.coderslab.RugbyTeam.services.PlayerService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -31,8 +33,11 @@ public class PlayerController {
         return "addPlayer";
     }
     @PostMapping("/add")
-    public String save(Player player) {
+    public String save(@Valid Player player, BindingResult result) {
 
+        if (result.hasErrors()) {
+            return "addPlayer";
+        }
         playerService.save(player);
         return "redirect:/app/players/list";
     }

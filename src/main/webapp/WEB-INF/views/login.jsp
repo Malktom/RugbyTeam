@@ -6,6 +6,7 @@
 <head>
     <title>Title</title>
 </head>
+<jsp:include page="formStyle.jsp"/>
 <body>
 <a href="<c:url value="/register"/>">Register New User</a>
 <form:form method="post" modelAttribute="user" >

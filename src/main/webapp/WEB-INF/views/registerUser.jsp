@@ -6,6 +6,7 @@
 <head>
     <title>Title</title>
 </head>
+<jsp:include page="formStyle.jsp"/>
 <body>
 <form:form method="post" modelAttribute="user" >
 
