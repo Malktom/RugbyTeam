@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.RugbyTeam.model.EventType;
 import pl.coderslab.RugbyTeam.repository.EventTypeRepository;
 
+import java.util.List;
+
 @Service
 public class EventTypeService {
 
@@ -18,5 +20,9 @@ public class EventTypeService {
 
     public void save(EventType eventType){
         eventTypeRepository.save(eventType);
+    }
+
+    public List<EventType> findAll(){
+       return (List<EventType>) eventTypeRepository.findAll();
     }
 }
