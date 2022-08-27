@@ -7,7 +7,9 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.servlet.http.HttpSession;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,6 +31,8 @@ public class Event {
     private Coach coach;
     @ManyToOne
     private EventType eventType;
+    @ManyToMany
+    private List<Player> players;
 
 
 }

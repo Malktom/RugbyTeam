@@ -19,6 +19,12 @@
    Description:
     <form:input path="description"/>
     <form:errors path="description" cssClass="error-class"/>
+<%--    Coach:--%>
+<%--    <form:input path="coach"/>--%>
+<%--    <form:errors path="coach" cssClass="error-class"/>--%>
+    Select players:
+    <form:select itemValue="id" itemLabel="name" path="players" items="${players}"/>
+    <form:errors path="eventType" cssClass="error-class"/>
 
 
 

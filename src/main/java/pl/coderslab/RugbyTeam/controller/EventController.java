@@ -7,8 +7,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.RugbyTeam.model.Event;
 import pl.coderslab.RugbyTeam.model.EventType;
+import pl.coderslab.RugbyTeam.model.Player;
 import pl.coderslab.RugbyTeam.services.EventService;
 import pl.coderslab.RugbyTeam.services.EventTypeService;
+import pl.coderslab.RugbyTeam.services.PlayerService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -21,6 +23,8 @@ public class EventController {
     private EventService eventService;
     @Autowired
     private EventTypeService eventTypeService;
+    @Autowired
+    private PlayerService playerService;
 
 
     @GetMapping(path="/list")
@@ -53,5 +57,9 @@ public class EventController {
     @ModelAttribute("eventTypes")
     public List<EventType> eventTypes(){
         return (List<EventType>) eventTypeService.getEventsTypeList();
+    }
+    @ModelAttribute("players")
+    public List<Player> players(){
+        return (List<Player>) playerService.getPlayersList();
     }
 }

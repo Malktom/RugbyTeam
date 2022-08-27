@@ -32,7 +32,7 @@
         <th>type</th>
         <th>name</th>
         <th>description</th>
-        <th>coach</th>
+        <th>players</th>
 
 
     </tr>
@@ -42,6 +42,7 @@
             <td>${event.eventType.name}</td>
             <td>${event.name}</td>
             <td>${event.description}</td>
+            <td>${event.players}</td>
 
             <td>
                 <a href="<c:url value="/app/events/delete/${event.id}"/>">delete</a>
