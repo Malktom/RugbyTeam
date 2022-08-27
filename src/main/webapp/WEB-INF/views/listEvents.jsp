@@ -5,27 +5,11 @@
 <head>
     <title>Title</title>
 </head>
-<style>
-    table {
-        border-collapse: collapse;
-        /*width: 100%;*/
-    }
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
-    tr:nth-child(even){background-color: #f2f2f2}
-    th {
-        background-color: #04AA6D;
-        color: white;
-    }
-</style>
+<jsp:include page="formStyle.jsp"/>
 <body>
+
+<jsp:include page="navi.jsp"/>
 <a href="<c:url value="/app/events/add"/>">Add new Event</a>
-<a href="<c:url value="/app/players/list"/>">Players</a>
-<a href="<c:url value="/app/users/list"/>">Users</a>
-<%--<a href="<c:url value="/article/list"/>">article list</a>--%>
-<%--<a href="<c:url value="/author/list"/>">author list</a>--%>
 <table>
     <tr>
         <th>id</th>
