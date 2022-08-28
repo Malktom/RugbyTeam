@@ -50,9 +50,6 @@ public class MainController {
         return "redirect:/login";
     }
 
-
-
-
     @GetMapping("/login")
     public String login(Model model, HttpServletRequest request) {
         model.addAttribute("user", new User());
@@ -65,8 +62,8 @@ public class MainController {
                         @RequestParam("password") String password,
                         HttpSession session) {
         User user = userService.findByLogin(login);
-        if (login.equals(user.getLogin()) && BCrypt.checkpw(password,user.getPassword())) {
-//        if (login.equals(user.getLogin()) && password.equals(user.getPassword())) {
+        if ( BCrypt.checkpw(password,user.getPassword())) {
+
             session.setAttribute("user", user);
         }
         if (session.getAttribute("user") != null) {
