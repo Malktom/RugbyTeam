@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -27,7 +28,7 @@ public class User {
     @NotBlank
     @Length(min=2)
     private String password;
-    @NotBlank
+//    @NotBlank   // error przy tworzenu nowego usera
     private Integer role;
 
 
