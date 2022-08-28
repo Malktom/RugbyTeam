@@ -11,6 +11,7 @@ import pl.coderslab.RugbyTeam.repository.EventRepository;
 import pl.coderslab.RugbyTeam.repository.PlayerRepository;
 import pl.coderslab.RugbyTeam.repository.UserRepository;
 import pl.coderslab.RugbyTeam.services.UserService;
+import pl.coderslab.RugbyTeam.utils.BCrypt;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -44,7 +45,7 @@ public class MainController {
     }
     @PostMapping("/register")
     public String save(User user) {
-
+        user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
         userService.save(user);
         return "redirect:/login";
     }
@@ -66,10 +67,8 @@ public class MainController {
         User user = userService.findByLogin(login);
 
         if (login.equals(user.getLogin()) && password.equals(user.getPassword())) {
-
             session.setAttribute("user", user);
         }
-
         if (session.getAttribute("user") != null) {
 
             return "redirect:/app/";
