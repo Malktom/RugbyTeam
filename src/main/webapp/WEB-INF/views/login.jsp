@@ -3,11 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
 
-
+<jsp:include page="header.jsp"/>
 <body>
 
 <div id="container">
@@ -28,6 +25,7 @@
         <input type="submit" value="submit">
 
     </form:form>
+    <img src="image/wasp.png" width="120" height="100" border="0" /><br>
 </div>
 </body>
 </html>
