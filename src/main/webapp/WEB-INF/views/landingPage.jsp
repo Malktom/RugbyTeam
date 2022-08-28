@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
-    <jsp:include page="formStyle.jsp"/>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <jsp:include page="navi.jsp"/>
 

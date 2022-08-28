@@ -4,9 +4,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<jsp:include page="formStyle.jsp"/>
+
 <body>
 <form:form method="post" modelAttribute="user" >
 

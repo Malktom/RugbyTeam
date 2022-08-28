@@ -6,7 +6,7 @@
 <head>
     <title>Title</title>
 </head>
-<jsp:include page="formStyle.jsp"/>
+<link rel="stylesheet" href="/css/style.css">
 <body>
 <jsp:include page="navi.jsp"/>
 <form:form method="post" modelAttribute="event">

@@ -1,9 +1,10 @@
+<%@ taglib prefix="form"
+           uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
-    <jsp:include page="formStyle.jsp"/>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>

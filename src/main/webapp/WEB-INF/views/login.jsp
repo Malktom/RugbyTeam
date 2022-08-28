@@ -4,28 +4,30 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<jsp:include page="formStyle.jsp"/>
+
 
 <body>
 
-<div id="navbar">
-    <a href="/register">Register</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
+<div id="container">
+    <div id="navbar">
+        <a href="/register">Register</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <form:form method="post" modelAttribute="user">
+
+        Login:
+        <form:input path="login"/><br>
+
+        Password:
+        <form:input path="password"/>
+
+
+        <input type="submit" value="submit">
+
+    </form:form>
 </div>
-<form:form method="post" modelAttribute="user" >
-
-    Login:
-    <form:input path="login"/><br>
-
-    Password:
-    <form:input path="password"/>
-
-
-    <input type="submit" value="submit">
-
-</form:form>
 </body>
 </html>
