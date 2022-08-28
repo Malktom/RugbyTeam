@@ -12,6 +12,7 @@
 <jsp:include page="navi.jsp"/>
 <div class="btn-group">
     <button onclick="location.href='/app/events/add'" type="button">Add New Event</button>
+    <button onclick="location.href='/app/events/addType'" type="button">Add New Event Type</button><br><br>
 </div>
 
 <div>

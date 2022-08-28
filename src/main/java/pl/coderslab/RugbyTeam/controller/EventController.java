@@ -87,4 +87,19 @@ public class EventController {
         return (List<Player>) playerService.getPlayersList();
     }
 
+    @GetMapping("addType")
+    public String addType(Model model) {
+        model.addAttribute("eventType", new EventType());
+
+        return "addEventType";
+    }
+    @PostMapping("/addType")
+    public String saveType(@Valid EventType eventType, BindingResult result) {
+
+        if (result.hasErrors()) {
+            return "addEventType";
+        }
+        eventTypeService.save(eventType);
+        return "redirect:/app/events/types";
+    }
 }

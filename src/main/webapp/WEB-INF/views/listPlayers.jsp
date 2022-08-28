@@ -13,7 +13,7 @@
 
 <jsp:include page="navi.jsp"/>
 <div class="btn-group">
-    <button onclick="location.href='/app/players/add'" type="button">Add New Player</button>
+    <button onclick="location.href='/app/players/add'" type="button">Add New Player</button><br><br>
 </div>
 <table>
     <tr>

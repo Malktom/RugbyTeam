@@ -13,6 +13,10 @@
 </head>
 <body>
 <jsp:include page="navi.jsp"/>
+<div class="btn-group">
+
+    <button onclick="location.href='/app/events/addType'" type="button">Add New Event Type</button><br><br>
+</div>
 <table>
     <tr>
         <th>name</th>
