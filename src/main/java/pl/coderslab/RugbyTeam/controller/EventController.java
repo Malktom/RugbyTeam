@@ -69,11 +69,13 @@ public class EventController {
     @GetMapping("/{eventType}")
     public String showEventsByType(@PathVariable String eventType, Model model) {
         model.addAttribute("eventByTypeName", eventService.findAllByEventTypeName(eventType));
+
         return "eventsByTypeName";
     }
     @GetMapping("/types")
     public String get5LatestArticles(Model model) {
         model.addAttribute("eventTypes", eventTypeService.findAll());
+
         return "eventType";
     }
     @ModelAttribute("eventTypes")

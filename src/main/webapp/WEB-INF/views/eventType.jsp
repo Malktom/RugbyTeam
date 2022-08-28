@@ -17,14 +17,19 @@
     <tr>
         <th>name</th>
         <th>description</th>
+        <th>number of events</th>
 
 
     </tr>
     <c:forEach items="${eventTypes}" var="event">
         <tr>
-
-            <td><a href="<c:url value="/app/events/${event.name}"/>"> ${event.name}</a></td>
+            <div class="btn-group">
+                <td><button onclick="location.href='/app/events/${event.name}'"type="button"> ${event.name}</button></td>
+            </div>
             <td>${event.description}</td>
+
+
+
 
 
         </tr>

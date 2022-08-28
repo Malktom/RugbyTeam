@@ -12,6 +12,8 @@
         <th>id</th>
         <th>name</th>
         <th>description</th>
+        <th>players selected</th>
+
 
 
     </tr>
@@ -20,6 +22,8 @@
             <td>${event.id}</td>
             <td>${event.name}</td>
             <td>${event.description}</td>
+            <td>${event.players}</td>
+
 
 
             <td>

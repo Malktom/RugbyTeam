@@ -18,17 +18,21 @@ public class EventService {
         return eventRepository.findAll();
     }
 
-    public void save(Event event){
+    public void save(Event event) {
         eventRepository.save(event);
     }
+
     public void delete(Integer id) {
         eventRepository.deleteById(id);
     }
+
     public Optional<Event> edit(Integer id) {
         return eventRepository.findById(id);
     }
-        public List<Event> findAllByEventTypeName(String name) {
+
+    public List<Event> findAllByEventTypeName(String name) {
         return eventRepository.findAllByEventTypeName(name);
-        }
-    
+    }
+
+
 }
