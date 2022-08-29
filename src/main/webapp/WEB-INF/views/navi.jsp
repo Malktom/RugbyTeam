@@ -4,6 +4,8 @@
   <a href="/app/users/list">Users</a>
   <a href="/app/events/types">Events Types List</a>
   <a href="/app/events/training">Trainings</a>
+  <a href="/app/leageTable">Leage Table</a>
+  <a href="/logout">Logout</a>
 </div>
 
 
