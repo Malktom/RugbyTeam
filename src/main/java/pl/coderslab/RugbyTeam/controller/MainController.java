@@ -79,6 +79,11 @@ public class MainController {
         // This returns a JSON or XML with the users
         return userRepository.findAll();
     }
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/login";
+    }
     @GetMapping(path="/players")
     public @ResponseBody Iterable<Player> getAllPlayers() {
         return playerRepository.findAll();
