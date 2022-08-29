@@ -72,7 +72,6 @@ public class MainController {
         } else {
             return "redirect:/login";
         }
-
     }
 
     @GetMapping(path="/users")
