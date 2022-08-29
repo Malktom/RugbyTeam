@@ -65,7 +65,7 @@ public class MainController {
         if ( BCrypt.checkpw(password,user.getPassword())) {
 
             session.setAttribute("user", user);
-        }
+                   }
         if (session.getAttribute("user") != null) {
 
             return "redirect:/app/";
