@@ -27,7 +27,7 @@ public class User {
     @NotBlank
     @Length(min=2)
     private String password;
-    @NotBlank
+//    @NotBlank
     private Integer role;
 
 

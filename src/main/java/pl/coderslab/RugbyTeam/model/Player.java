@@ -35,5 +35,8 @@ public class Player {
     private LocalDateTime medicalCheckDate;
     private double presenceStatistic;
 
-
+    @Override
+    public String toString() {
+        return name+" "+surname;
+    }
 }

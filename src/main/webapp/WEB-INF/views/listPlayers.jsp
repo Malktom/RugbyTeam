@@ -1,30 +1,16 @@
+<%@ taglib prefix="form"
+           uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<style>
-    table {
-        border-collapse: collapse;
-        /*width: 100%;*/
-    }
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
-    tr:nth-child(even){background-color: #f2f2f2}
-    th {
-        background-color: #04AA6D;
-        color: white;
-    }
-</style>
+<%--<jsp:include page="header.jsp"/>--%>
+<link rel="stylesheet" href="/css/style.css">
 <body>
-<a href="<c:url value="/app/players/add"/>">Add new Player</a>
-<a href="<c:url value="/app/users/list"/>">Users</a>
-<a href="<c:url value="/app/events/list"/>">Events</a>
-<%--<a href="<c:url value="/article/list"/>">article list</a>--%>
-<%--<a href="<c:url value="/author/list"/>">author list</a>--%>
+
+<jsp:include page="navi.jsp"/>
+<div class="btn-group">
+    <button onclick="location.href='/app/players/add'" type="button">Add New Player</button><br><br>
+</div>
 <table>
     <tr>
         <th>id</th>
@@ -51,7 +37,11 @@
             <td>${player.presenceStatistic}</td>
 
             <td>
-                <a href="<c:url value="/app/players/delete/${player.id}"/>">delete</a>
+                <div class="btn-group">
+                    <button onclick="location.href='/app/players/delete/${player.id}'" type="button">delete</button>
+                    <button onclick="location.href='/app/players/edit/${player.id}'" type="button">edit</button>
+                </div>
+
 <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
             </td>
         </tr>
@@ -59,5 +49,6 @@
     </c:forEach>
 
 </table>
+
 </body>
 </html>

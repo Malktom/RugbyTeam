@@ -6,8 +6,9 @@
 <head>
     <title>Title</title>
 </head>
-<jsp:include page="formStyle.jsp"/>
+<link rel="stylesheet" href="/css/style.css">
 <body>
+<jsp:include page="navi.jsp"/>
 <form:form method="post" modelAttribute="event">
     <form:hidden path="id"/>
     EvenType:
@@ -19,6 +20,13 @@
    Description:
     <form:input path="description"/>
     <form:errors path="description" cssClass="error-class"/>
+<%--    Coach:--%>
+<%--    <form:input path="coach"/>--%>
+<%--    <form:errors path="coach" cssClass="error-class"/>--%>
+    Select players:
+<%--    getter--%>
+    <form:select itemValue="id" itemLabel="name" path="players" items="${players}"/>
+    <form:errors path="eventType" cssClass="error-class"/>
 
 
 

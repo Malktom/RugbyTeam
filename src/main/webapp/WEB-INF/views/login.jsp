@@ -3,23 +3,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<jsp:include page="formStyle.jsp"/>
+
+<jsp:include page="header.jsp"/>
 <body>
-<a href="<c:url value="/register"/>">Register New User</a>
-<form:form method="post" modelAttribute="user" >
 
-    Login:
-    <form:input path="login"/><br>
+<div id="container">
+    <div id="navbar">
+        <a href="/register">Register</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <form:form method="post" modelAttribute="user">
 
-    Password:
-    <form:input path="password"/>
+        Login:
+        <form:input path="login"/><br>
+
+        Password:
+        <form:input path="password"/>
 
 
-    <input type="submit" value="submit">
+        <input type="submit" value="submit">
 
-</form:form>
+    </form:form>
+    <img src="image/wasp.png" width="120" height="100" border="0" /><br>
+</div>
 </body>
 </html>
