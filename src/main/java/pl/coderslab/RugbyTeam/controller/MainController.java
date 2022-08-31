@@ -1,5 +1,6 @@
 package pl.coderslab.RugbyTeam.controller;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +12,6 @@ import pl.coderslab.RugbyTeam.repository.EventRepository;
 import pl.coderslab.RugbyTeam.repository.PlayerRepository;
 import pl.coderslab.RugbyTeam.repository.UserRepository;
 import pl.coderslab.RugbyTeam.services.UserService;
-import pl.coderslab.RugbyTeam.utils.BCrypt;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
