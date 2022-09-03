@@ -27,8 +27,12 @@
             <td>${user.role}</td>
 
             <td>
-<%--                <a href="<c:url value="/category/delete/${category.id}"/>">delete</a>--%>
-<%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
+                <div class="btn-group">
+                    <button onclick="location.href='/app/users/delete/${user.id}'" type="button">delete</button>
+<%--                    <button onclick="location.href='/app/users/edit/${user.id}'" type="button">edit</button>--%>
+
+
+                </div>
             </td>
         </tr>
 

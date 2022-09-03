@@ -26,5 +26,10 @@ public class UserController {
         model.addAttribute("users", all);
         return "listUsers";
     }
+    @RequestMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        userService.delete(id);
+        return "redirect:/app/users/list";
+    }
 
 }
