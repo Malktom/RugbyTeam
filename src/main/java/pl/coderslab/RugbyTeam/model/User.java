@@ -5,9 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import pl.coderslab.RugbyTeam.utils.LoginAvailability;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
@@ -18,9 +20,9 @@ public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    @NotBlank
+     @NotBlank
     @Length(min=2)
-    @Column(unique = true)
+    @LoginAvailability
     private String login;
     @NotBlank
     @Length(min=2)
