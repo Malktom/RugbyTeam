@@ -20,6 +20,7 @@ public class User {
     private Integer id;
     @NotBlank
     @Length(min=2)
+    @Column(unique = true)
     private String login;
     @NotBlank
     @Length(min=2)
@@ -29,6 +30,7 @@ public class User {
     private String password;
 //    @NotBlank
     private Integer role;
+
 
 
 }
