@@ -28,7 +28,7 @@ public class User {
     @NotBlank
     @Length(min=2)
     private String password;
-//    @NotBlank   // error przy tworzenu nowego usera
+
     private Integer role;
 
 

@@ -24,6 +24,7 @@
 <%--    <form:input path="coach"/>--%>
 <%--    <form:errors path="coach" cssClass="error-class"/>--%>
     Select players:
+<%--    getter--%>
     <form:select itemValue="id" itemLabel="name" path="players" items="${players}"/>
     <form:errors path="eventType" cssClass="error-class"/>
 

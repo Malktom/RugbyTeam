@@ -1,5 +1,6 @@
 package pl.coderslab.RugbyTeam.controller;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,13 +45,10 @@ public class MainController {
     }
     @PostMapping("/register")
     public String save(User user) {
-
+        user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
         userService.save(user);
         return "redirect:/login";
     }
-
-
-
 
     @GetMapping("/login")
     public String login(Model model, HttpServletRequest request) {
@@ -64,25 +62,27 @@ public class MainController {
                         @RequestParam("password") String password,
                         HttpSession session) {
         User user = userService.findByLogin(login);
-
-        if (login.equals(user.getLogin()) && password.equals(user.getPassword())) {
+        if ( BCrypt.checkpw(password,user.getPassword())) {
 
             session.setAttribute("user", user);
-        }
-
+                   }
         if (session.getAttribute("user") != null) {
 
             return "redirect:/app/";
         } else {
             return "redirect:/login";
         }
-
     }
 
     @GetMapping(path="/users")
     public @ResponseBody Iterable<User> getAllUsers() {
         // This returns a JSON or XML with the users
         return userRepository.findAll();
+    }
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/login";
     }
     @GetMapping(path="/players")
     public @ResponseBody Iterable<Player> getAllPlayers() {
