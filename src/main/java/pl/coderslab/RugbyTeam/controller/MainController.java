@@ -51,10 +51,10 @@ public class MainController {
     }
 
     @PostMapping("/register")
+
     public String save(@Valid User user, BindingResult result) {
-//        LoginValidator loginValidator = new LoginValidator(user.getLogin());
-//        loginValidator.isValid(user.getLogin(), user);
         if (result.hasErrors()) {
+
             return "registerUser";
         } else {
             user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));

@@ -15,13 +15,13 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @Table(name= "users")
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
-     @NotBlank
-    @Length(min=2)
+
     @LoginAvailability
     private String login;
     @NotBlank

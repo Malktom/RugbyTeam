@@ -31,7 +31,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public Optional<User> findUserByLogin(String name) {
-        return userRepository.findOptionalByLogin(name);
+    public Optional<User> findUserByLoginName(String name) {
+        return userRepository.findUserByLogin(name);
     }
 }
