@@ -15,6 +15,7 @@ import pl.coderslab.RugbyTeam.services.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(path="/")
@@ -61,10 +62,10 @@ public class MainController {
     public String login(@RequestParam("login") String login,
                         @RequestParam("password") String password,
                         HttpSession session) {
-        User user = userService.findByLogin(login);
-        if ( BCrypt.checkpw(password,user.getPassword())) {
+        Optional<String> byName = Optional.ofNullable(userService.findByLogin(login).getPassword());
+        if ( BCrypt.checkpw(password,byName.toString())) {
 
-            session.setAttribute("user", user);
+            session.setAttribute("user", byName);
                    }
         if (session.getAttribute("user") != null) {
 

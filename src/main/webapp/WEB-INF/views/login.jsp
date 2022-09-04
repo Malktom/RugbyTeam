@@ -17,7 +17,7 @@
 
         Login:
         <form:input path="login"/><br>
-
+        <form:errors path="login" cssClass="error-class"/>
         Password:
         <form:input path="password"/>
 
