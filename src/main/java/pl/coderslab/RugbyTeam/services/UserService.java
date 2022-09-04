@@ -5,8 +5,12 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.RugbyTeam.model.User;
 import pl.coderslab.RugbyTeam.repository.UserRepository;
 
+import javax.transaction.Transactional;
+import java.util.Optional;
+
 
 @Service
+@Transactional
 public class UserService {
 
     @Autowired
@@ -19,11 +23,18 @@ public class UserService {
     }
 
 
-
     public User findByLogin(String login) {
         return userRepository.findByLogin(login);
     }
+
     public void save(User user) {
         userRepository.save(user);
+    }
+
+    public Optional<User> findUserByLoginName(String name) {
+        return userRepository.findUserByLogin(name);
+    }
+    public void delete(Integer id){
+        userRepository.deleteById(id);
     }
 }

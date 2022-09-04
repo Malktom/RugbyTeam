@@ -5,21 +5,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import pl.coderslab.RugbyTeam.utils.LoginAvailability;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
 @Setter
 @Table(name= "users")
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
-    @NotBlank
-    @Length(min=2)
+
+    @LoginAvailability
     private String login;
     @NotBlank
     @Length(min=2)
@@ -29,6 +32,7 @@ public class User {
     private String password;
 //    @NotBlank
     private Integer role;
+
 
 
 }
