@@ -37,5 +37,13 @@
     </c:forEach>
 
 </table>
+<div >
+    <button onclick="location.href='/app/users/list?page=0'" type="button">page 1</button>
+    <button onclick="location.href='/app/users/list?page=1'" type="button">page 2</button>
+    <button onclick="location.href='/app/users/list?page=2'" type="button">page 3</button>
+
+
+
+</div>
 </body>
 </html>
