@@ -27,7 +27,7 @@
 
 
     <input type="submit" value="submit">
-
+    <img src="image/wasp.png" width="120" height="100" border="0" /><br>
 </form:form>
 </body>
 </html>

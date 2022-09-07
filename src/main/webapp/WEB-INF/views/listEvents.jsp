@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%--<jsp:include page="header.jsp"/>--%>
-<link rel="stylesheet" href="/css/style.css">
+<jsp:include page="header.jsp"/>
+<%--<link rel="stylesheet" href="/css/style.css">--%>
 <body>
 
 <jsp:include page="navi.jsp"/>
@@ -13,7 +13,7 @@
     <button onclick="location.href='/app/events/addType'" type="button">Add New Event Type</button><br><br>
 </div>
 
-<div>
+<div id="container">
     <table>
         <tr>
             <th>id</th>
@@ -31,6 +31,8 @@
                 <td>${event.name}</td>
                 <td>${event.description}</td>
                 <td>${event.players}</td>
+                <td><img src="<%= request.getContextPath() %>/${event.image}"width="150" height="150"></td>
+
 
                 <td>
 
@@ -42,12 +44,12 @@
                     </div>
                         <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
                 </td>
-            </tr>
+
 
         </c:forEach>
 
     </table>
-
+    <img src="<%= request.getContextPath() %>/image/wasp.png" width="120" height="100" border="0" /><br>
 </div>
 </body>
 </html>

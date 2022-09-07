@@ -75,15 +75,19 @@ public class MainController {
                         @RequestParam("password") String password,
                         HttpSession session) {
         User user = userService.findByLogin(login);
-        if (BCrypt.checkpw(password, user.getPassword())) {
-
-            session.setAttribute("user", user);
-        }
-        if (session.getAttribute("user") != null) {
-
-            return "redirect:/app/";
-        } else {
+        if (user == null) {
             return "redirect:/login";
+        } else {
+            if (BCrypt.checkpw(password, user.getPassword())) {
+
+                session.setAttribute("user", user);
+            }
+            if (session.getAttribute("user") != null) {
+
+                return "redirect:/app/";
+            } else {
+                return "redirect:/login";
+            }
         }
     }
 
