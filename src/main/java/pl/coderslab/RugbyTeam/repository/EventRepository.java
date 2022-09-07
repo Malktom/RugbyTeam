@@ -1,5 +1,8 @@
 package pl.coderslab.RugbyTeam.repository;
 
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.coderslab.RugbyTeam.model.Event;
 
@@ -14,5 +17,7 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
 
     Optional<Event> findById(Integer Id);
     List<Event> findAllByEventTypeName( String name);
+    Page<Event> findAll(Pageable pageable);
+
 
 }
