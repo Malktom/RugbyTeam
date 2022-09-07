@@ -18,7 +18,7 @@ public class UserService {
     private UserRepository userRepository;
 
 
-    public Iterable<User> getUserList(PageRequest id) {
+    public Iterable<User> getUserList() {
         return userRepository.findAll();
 
     }

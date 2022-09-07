@@ -43,6 +43,10 @@
     <button onclick="location.href='/app/users/list?page=2'" type="button">page 3</button>
 
 
+</div>
+<div >
+    <button onclick="location.href='/app/users/list?sortBy=login'" type="button">sort by login</button>
+
 
 </div>
 </body>
