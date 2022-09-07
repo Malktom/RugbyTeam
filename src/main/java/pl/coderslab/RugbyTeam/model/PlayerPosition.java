@@ -14,7 +14,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name="playerPosition")
 public class PlayerPosition {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
     @NotBlank
     @Length(min=2)

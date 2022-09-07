@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 public class Coach {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO) // IDENTITY zeby nie tworzylo hibernate_sequence
+    @GeneratedValue(strategy= GenerationType.IDENTITY) // IDENTITY zeby nie tworzylo hibernate_sequence
     private Integer id;
     @NotBlank
     @Length(min=2)
