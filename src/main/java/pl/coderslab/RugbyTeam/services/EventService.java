@@ -1,6 +1,8 @@
 package pl.coderslab.RugbyTeam.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pl.coderslab.RugbyTeam.model.Event;
 import pl.coderslab.RugbyTeam.repository.EventRepository;
@@ -33,6 +35,7 @@ public class EventService {
     public List<Event> findAllByEventTypeName(String name) {
         return eventRepository.findAllByEventTypeName(name);
     }
+
 
 
 }
