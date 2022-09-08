@@ -20,8 +20,8 @@ public class EmailController {
     @GetMapping("/sendMail")
     public String sendMail() throws MessagingException {
         mailService.sendMail("tomek.maori@gmail.com",
-                "Wygrałeś",
-                "<b>1000 000 zł</b><br>:P", true);
+                "Dodatkowy trening",
+                "<b>trening młyna środa 19:00</b><br>", true);
         return "wysłano";
     }
 }
