@@ -28,6 +28,8 @@
     <form:errors path="position" cssClass="error-class"/>
     Ready to play?:
     <form:checkbox path="readyToPlay"/>
+    Medical Check date:
+    <form:input path="medicalCheckDate" type="Date"/>
 
 
 
