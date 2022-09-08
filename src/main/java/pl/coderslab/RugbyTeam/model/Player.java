@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -32,7 +33,7 @@ public class Player {
 
     private String position;
     private boolean readyToPlay;
-    private LocalDateTime medicalCheckDate;
+    private String medicalCheckDate;
     private double presenceStatistic;
 
     @Override
