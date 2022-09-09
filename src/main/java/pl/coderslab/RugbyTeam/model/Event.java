@@ -4,11 +4,13 @@ package pl.coderslab.RugbyTeam.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.type.descriptor.sql.LobTypeMappings;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.servlet.http.HttpSession;
 import javax.validation.constraints.NotBlank;
+import java.sql.Blob;
 import java.util.List;
 
 @Entity
@@ -33,6 +35,9 @@ public class Event {
     private EventType eventType;
     @ManyToMany
     private List<Player> players;
+
+    @Lob
+    private byte[] image;
 
 
 }

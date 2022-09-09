@@ -1,4 +1,4 @@
-<html>
+
 <head>
   <title>Title</title>
   <img src="<%= request.getContextPath() %>/image/rugbyBall.jpeg" width="200" height="100" border="0" />
